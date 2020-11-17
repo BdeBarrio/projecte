@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Proyecte {
+public class eines {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -42,8 +42,6 @@ public class Proyecte {
                     System.out.println("----------------");
                     System.out.println();
                     System.out.println("Introdueix l'usuari:");
-                    usuari = sc.nextLine();
-                    contra = sc.nextLine();
 
                     break;
 
@@ -57,7 +55,7 @@ public class Proyecte {
                     System.out.println("Aquesta opció no es valida torna a indicar-la.");
                     break;
 
-            }
+                }
 
         }
     }
