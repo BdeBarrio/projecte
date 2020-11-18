@@ -28,9 +28,9 @@ public class Proyecte {
                 case 1:
                     System.out.println("Enregistrament:");
                     System.out.println("------------------------");
-                    System.out.println("Indica el nom de usuari: ");
+                    System.out.print("Indica el nom de usuari: ");
                     usuari = sc.nextLine();
-                    System.out.println("Indica la contrasenya: ");
+                    System.out.print("Indica la contrasenya: ");
                     contra = sc.nextLine();
                     System.out.println();
                     array [x][0] = usuari;
@@ -38,22 +38,37 @@ public class Proyecte {
                     x++;
                     break;
                 case 2:
-                    System.out.println("Inici de sessió:");
-                    System.out.println("----------------");
-                    System.out.println();
-                    System.out.println("Introdueix l'usuari:");
-                    usuari = sc.nextLine();
-                    contra = sc.nextLine();
+                    boolean validació=true;
+                    while (validació) {
+                        System.out.println("Inici de sessió:");
+                        System.out.println("----------------");
+                        System.out.println();
+                        System.out.print("Introdueix l'usuari:");
+                        usuari = sc.nextLine();
+                        System.out.print("Introdueix la contrasenya:");
+                        contra = sc.nextLine();
+
+
+                        for (int i = 0; i < array.length; i++) {
+                            if (usuari.equalsIgnoreCase(array[i][0])) {
+                                if (contra.equalsIgnoreCase(array[i][1])) {
+                                    System.out.println("Has iniciat sessió. Benvingut " + usuari);
+                                    validació = false;
+                                } else {
+                                    System.out.println("La contrasenya no és correcta. Torna a provar. ");
+                                    System.out.println();
+                                }
+
+                            }
+                        }
+                    }
+
+
+
 
                     break;
 
                 default:
-                    for (int i=0; i < array.length; i++) {
-                        for (int j = 0; j < array[i].length; j++) {
-                            System.out.print(array[i][j]);
-                            System.out.println();
-                        }
-                    }
                     System.out.println("Aquesta opció no es valida torna a indicar-la.");
                     break;
 
